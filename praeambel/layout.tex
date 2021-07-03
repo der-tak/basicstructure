@@ -1,0 +1,16 @@
+\usepackage[a4paper,headheight=15pt,left=40mm,right=20mm,top=30mm,bottom=30mm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\titlespacing*{\chapter}{0pt}{0pt}{15pt} %remove additional spaces from captions
+\fancyhf{}
+\fancyhead{}
+\pagestyle{fancy}
+\fancyhead[LE,RO]{\slshape\nouppercase{\leftmark}}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[CO,CE]{\myTitleShort}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\renewcommand{\sectionmark}[1]{\markright{\thesection~- ~#1}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername~\thechapter~-~ #1}{}}
+\titleformat{\chapter}{\Large\normalfont\bfseries}{\thechapter}{0.5em}{}
+\fancypagestyle{plain}{}% copies "fancy" over "plain"

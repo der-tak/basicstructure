@@ -1,0 +1,49 @@
+\documentclass[12pt,oneside]{report} %twoside for printed version
+%
+%========imports required packages for general setup========
+%
+\input{praeambel/general_setup}
+%
+%========imports all required settings for code-listings========
+%
+\input{praeambel/listings}
+%
+%========imports layout settings and fancy-header========
+%
+\input{praeambel/layout}
+%
+%========user defined commands========
+%
+\input{praeambel/commands}
+%
+\begin{document}
+	%
+	\include{chapters/01_cover}
+	%
+	\pagenumbering{gobble}
+	\addtocontents{toc}{\protect\thispagestyle{empty}}
+	\tableofcontents
+	\thispagestyle{empty}
+	%
+	\include{chapters/02_statutory_declaration}
+	%
+	\pagenumbering{arabic}
+
+	\include{chapters/03_intro}
+	%
+	\include{chapters/06_chapter_03}
+	%
+	\include{chapters/07_chapter_04}
+	%
+	\include{chapters/11_conclusion}
+	%
+	\include{chapters/12_list_of_figures}
+	%
+	\include{chapters/13_list_of_abbreviations}
+	%
+	\pagenumbering{Roman}
+	\include{chapters/14_bibliography}
+	%
+	\myEmptyPage
+	
+\end{document}

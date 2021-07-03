@@ -1,0 +1,17 @@
+\chapter{Programmierung der \mapp}
+\label{ch:coding}
+Für die Programmierung der \mapp wurde die Programmiersprache C\# verwendet. Sie wird innerhalb des Unity-Editors genutzt und Unitys eigene Programmbibliotheken sind ebenfalls in dieser Sprache geschrieben. Im Unity-Editor lassen sich C\#-Skripte erstellen, die automatisch mit Unitys Oberfläche interagieren können. Der generierte Code wird als C\#-Klasse bezeichnet, da es sich bei diesem Code um eine objektorientiert programmierte Struktur handelt. Im Kontext von Unity werden diese Klassen oft nur als \enquote{Skripte} bezeichnet. Diese von Unity erstellten Skripte weisen eine einheitliche Struktur auf, die sich aus dem Namen des Skripts bzw. der Klasse, der \name{Update}- und \name{Start}-Methode zusammensetzt \coderef{lst:defaultscript}. Zusätzlich erhält die Zeile des Namens noch den Befehl \name{: MonoBehaviour}. Durch ihn erbt die neu erstellte Klasse von Unitys \name{MonoBehaviour}-Klasse und erhält somit Zugriff auf deren Funktionen. Das Erben von \enquote{MonoBehaviour} ist außerdem erforderlich, um das Skript direkt im Unity-Editor einbinden zu können. \name{Start} wird vor der Berechnung des ersten \name{frame}s gestartet und \name{Update} wird für jeden neu berechneten \name{frame} ausgeführt. Die genannten Elemente müssen nicht zwingend verwendet werden, finden sich aber im Code oft wieder.
+%
+	\section{Grundstruktur der Software}
+	\label{sec:struct}
+	Die Software soll alle Fahrzeuge, die vom Besucherbereich nicht eingesehen werden können, als 3D-Modelle zeigen und Interaktionen mit ihnen ermöglichen. Deshalb benötigt die App in erster Linie Funktionen zum Laden aller relevanten Fahrzeugdaten, die sich aus den 3D-Modellen und den bereitgestellten Bild- und Textinhalten zusammensetzen. Im nächsten Schritt soll der Nutzer aus einer Reihe von verfügbaren Fahrzeugmodellen eines auswählen, um genauere Informationen über dieses zu erhalten. Dafür soll sich eine neue Ansicht öffnen, die das ausgewählte Fahrzeugmodell sowie alle zu diesem Modell verfügbaren Text- und Bildinformationen zeigt. Des Weiteren soll sich das Fahrzeug-Modell auch in einer Vollbild-Ansicht öffnen lassen. In diesem Zusammenhang werden dann zusätzliche Interaktionsmöglichkeiten, wie z.B. ein Zoom, eingeblendet. Die Textbox und Galeriebilder sollen auch jeweils über eine eigene Vollbildansicht verfügen. Das Wechseln der Sprache zwischen deutsch und englisch soll über eine weitere Schaltfläche ebenfalls implementiert werden. Dieser Funktionsumfang wurde in der ursprünglichen Version der \mapp bereits von Paul Wolff größtenteils realisiert. Eine Implementierung der geplanten neuen Funktion, insbesondere das 3D-Rendering, in die bestehende App hätte allerdings einen erheblichen Arbeitsaufwand für das Aktualisieren veralteter Systeme mit sich gebracht. Deshalb wurde im Rahmen dieser Arbeit ein neuer, eigenständiger Prototyp basierend auf Unity Version 2019.4, entwickelt. Er soll dazu dienen, die neuen Möglichkeiten und erweiterten Funktionen unabhängig vom bisherigen Programm anhand der 3D-Modelle \name{MZ RT 125} und \name{Phänomen 4 RL} zu demonstrieren. 
+	%
+	\begin{lstlisting}[language={[Sharp]C}, caption={Die Grundstruktur einer durch Unity erstellten C\#-Klasse.}, label={lst:defaultscript}, float]
+		public class Example : MonoBehaviour
+		{
+			void Start(){}
+			
+			void Update(){}
+		}
+	\end{lstlisting}
+%
